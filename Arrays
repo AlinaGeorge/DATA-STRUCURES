@@ -1,0 +1,343 @@
+#include"Array2.cpp"
+using namespace std;
+int main(){
+	char stat;
+	cout<<"Do you want to create array(y/n):";
+	cin>>stat;
+	while(stat=='y'){
+		cout<<"Enter the datatype of array to be created?";
+		string op;
+		cin>>op;
+		if(op=="int"){
+			int el,ch,n,pos;
+			char choice;
+			Array<int> myArray;
+			cout<<"Start operations(y/n)?:";
+			cin>>choice;
+			while(choice=='y'){
+				cout<<"Choose the actions to perform:"<<endl;
+				cout<<"1.Insert at End \n2.Insert at Beginning \n3.Inserting at specified position"<<endl;
+				cout<<"4.Delete at End \n5.Delete at Beginning \n6.Delete at specified position"<<endl;
+				cout<<"7.QuickSort \n8.BubbleSort \n9.Insertion Sort \n10.MergeSort"<<endl;
+				cout<<"11.Selection Sort \n12.Binary Search \n13.Linear Search"<<endl;
+				cin>>ch;
+				if(ch==1){
+					cout<<"How many elements do you want to insert at end?";
+					cin>>n;
+					for(int i=0;i<n;i++){
+						cout<<"Enter the element:";
+						cin>>el;			
+						myArray.insert_at_end(el);
+						cout<<"Inserting at the end:"<<endl;
+						myArray.display();
+					}
+				}
+				if(ch==2){
+					cout<<"How many elements do you want to insert at beginning?";
+					cin>>n;
+					for(int i=0;i<n;i++){
+						cout<<"Enter the element:";
+						cin>>el;			
+						myArray.insert_at_beg(el);
+						cout<<"Inserting at the beginnning:"<<endl;
+						myArray.display();
+					}
+				}
+				if(ch==3){					
+					cout<<"Enter the element:";
+					cin>>el;
+					cout<<"Enter the position to insert:";
+					cin>>pos;			
+					myArray.insert_at_index(el,pos);
+					cout<<"Inserting at specified position:"<<endl;
+					myArray.display();
+				}
+				if(ch==4){			
+						myArray.del_at_end();
+						cout<<"Deleting at the end:"<<endl;
+						myArray.display();				
+				}
+				if(ch==5){			
+						myArray.del_at_beg();
+						cout<<"Delete at the Beginning:"<<endl;
+						myArray.display();
+				}
+				if(ch==6){
+					cout<<"Enter the position to delete";
+					cin>>pos;			
+					myArray.del_at_index(pos);
+					cout<<"Deleting at specified position:"<<endl;
+					myArray.display();					
+				}
+				if(ch==7){
+					int lb=myArray.getLB();
+					int ub=myArray.getUB();
+					cout<<"Quick Sorted Array:";
+					myArray.quick_sort(lb,ub);
+					myArray.display();
+				}
+				if(ch==8){
+					cout<<"Bubble Sorted Array:";
+					myArray.bubble_sort();
+					myArray.display();
+				}
+				if(ch==9){
+					cout<<"Insertion Sorted Array:";
+					myArray.insertion_sort();
+					myArray.display();
+				}
+				if(ch==10){
+					int lb=myArray.getLB();
+					int ub=myArray.getUB();
+					cout<<"Merge Sorted Array:";
+					myArray.merge_Sort(lb,ub);
+					myArray.display();
+				}
+				if(ch==11){
+					cout<<"Selection Sorted Array:";
+					myArray.selection_sort();
+					myArray.display();
+				}
+				if(ch==12){
+					cout<<"Enter the key to Binary search:";
+					int key;
+					cin>>key;
+					int ind2=myArray.binary_search(key);
+					cout<<"Index in binary search:"<<ind2<<endl;
+				}
+				if(ch==13){
+					cout<<"Enter the key to search linearly:";
+					int key;
+					cin>>key;
+					int ind1=myArray.linear_search(key);
+					cout<<"Index in linear search:"<<ind1<<endl;
+				}
+				cout<<"Do you want to continue with operations(y/n):";
+				cin>>choice;
+			}
+		}
+		if(op=="char"){
+			int ch,n,pos;
+			char choice,el;
+			Array<char> myArray;
+			cout<<"Start operations(y/n)?:";
+			cin>>choice;
+			while(choice=='y'){
+				cout<<"Choose the actions to perform:"<<endl;
+				cout<<"1.Insert at End \n2.Insert at Beginning \n3.Inserting at specified position"<<endl;
+				cout<<"4.Delete at End \n5.Delete at Beginning \n6.Delete at specified position"<<endl;
+				cout<<"7.QuickSort \n8.BubbleSort /n9.Insertion Sort \n10.MergeSort"<<endl;
+				cout<<"11.Selection Sort \n12.Binary Search \n13.Linear Search"<<endl;
+				cin>>ch;
+				if(ch==1){
+					cout<<"How many elements do you want to insert at end?";
+					cin>>n;
+					for(int i=0;i<n;i++){
+						cout<<"Enter the element:";
+						cin>>el;			
+						myArray.insert_at_end(el);
+						cout<<"Inserting at the end:"<<endl;
+						myArray.display();
+					}
+				}
+				if(ch==2){
+					cout<<"How many elements do you want to insert at beginning?";
+					cin>>n;
+					for(int i=0;i<n;i++){
+						cout<<"Enter the element:";
+						cin>>el;			
+						myArray.insert_at_beg(el);
+						cout<<"Inserting at the beginnning:"<<endl;
+						myArray.display();
+					}
+				}
+				if(ch==3){					
+					cout<<"Enter the element:";
+					cin>>el;
+					cout<<"Enter the position to insert:";
+					cin>>pos;			
+					myArray.insert_at_index(el,pos);
+					cout<<"Inserting at specified position:"<<endl;
+					myArray.display();
+				}
+				if(ch==4){			
+						myArray.del_at_end();
+						cout<<"Deleting at the end:"<<endl;
+						myArray.display();				
+				}
+				if(ch==5){			
+						myArray.del_at_beg();
+						cout<<"Delete at the Beginning:"<<endl;
+						myArray.display();
+				}
+				if(ch==6){
+					cout<<"Enter the position to delete";
+					cin>>pos;			
+					myArray.del_at_index(pos);
+					cout<<"Deleting at specified position:"<<endl;
+					myArray.display();					
+				}
+				if(ch==7){
+					int lb=myArray.getLB();
+					int ub=myArray.getUB();
+					cout<<"Quick Sorted Array:";
+					myArray.quick_sort(lb,ub);
+					myArray.display();
+				}
+				if(ch==8){
+					cout<<"Bubble Sorted Array:";
+					myArray.bubble_sort();
+					myArray.display();
+				}
+				if(ch==9){
+					cout<<"Insertion Sorted Array:";
+					myArray.insertion_sort();
+					myArray.display();
+				}
+				if(ch==10){
+					int lb=myArray.getLB();
+					int ub=myArray.getUB();
+					cout<<"Merge Sorted Array:";
+					myArray.merge_Sort(lb,ub);
+					myArray.display();
+				}
+				if(ch==11){
+					cout<<"Selection Sorted Array:";
+					myArray.selection_sort();
+					myArray.display();
+				}
+				if(ch==12){
+					cout<<"Enter the key to Binary search:";
+					char key;
+					cin>>key;
+					int ind2=myArray.binary_search(key);
+					cout<<"Index in binary search:"<<ind2<<endl;
+				}
+				if(ch==13){
+					cout<<"Enter the key to search linearly:";
+					char key;
+					cin>>key;
+					int ind1=myArray.linear_search(key);
+					cout<<"Index in linear search:"<<ind1<<endl;
+				}
+				cout<<"Do you want to continue with operations(y/n):";
+				cin>>choice;
+			}
+		}
+		if(op=="float"){
+			int ch,n,pos;
+			char choice;
+			float el;
+			Array<float> myArray;
+			cout<<"Start operations(y/n)?:";
+			cin>>choice;
+			while(choice=='y'){
+				cout<<"Choose the actions to perform:"<<endl;
+				cout<<"1.Insert at End \n2.Insert at Beginning \n3.Inserting at specified position"<<endl;
+				cout<<"4.Delete at End \n5.Delete at Beginning \n6.Delete at specified position"<<endl;
+				cout<<"7.QuickSort \n8.BubbleSort \n9.Insertion Sort \n10.MergeSort"<<endl;
+				cout<<"11.Selection Sort \n12.Binary Search \n13.Linear Search"<<endl;
+				cin>>ch;
+				if(ch==1){
+					cout<<"How many elements do you want to insert at end?";
+					cin>>n;
+					for(int i=0;i<n;i++){
+						cout<<"Enter the element:";
+						cin>>el;			
+						myArray.insert_at_end(el);
+						cout<<"Inserting at the end:"<<endl;
+						myArray.display();
+					}
+				}
+				if(ch==2){
+					cout<<"How many elements do you want to insert at beginning?";
+					cin>>n;
+					for(int i=0;i<n;i++){
+						cout<<"Enter the element:";
+						cin>>el;			
+						myArray.insert_at_beg(el);
+						cout<<"Inserting at the beginnning:"<<endl;
+						myArray.display();
+					}
+				}
+				if(ch==3){					
+					cout<<"Enter the element:";
+					cin>>el;
+					cout<<"Enter the position to insert:";
+					cin>>pos;			
+					myArray.insert_at_index(el,pos);
+					cout<<"Inserting at specified position:"<<endl;
+					myArray.display();
+				}
+				if(ch==4){			
+						myArray.del_at_end();
+						cout<<"Deleting at the end:"<<endl;
+						myArray.display();				
+				}
+				if(ch==5){			
+						myArray.del_at_beg();
+						cout<<"Delete at the Beginning:"<<endl;
+						myArray.display();
+				}
+				if(ch==6){
+					cout<<"Enter the position to delete";
+					cin>>pos;			
+					myArray.del_at_index(pos);
+					cout<<"Deleting at specified position:"<<endl;
+					myArray.display();					
+				}
+				if(ch==7){
+					int lb=myArray.getLB();
+					int ub=myArray.getUB();
+					cout<<"Quick Sorted Array:";
+					myArray.quick_sort(lb,ub);
+					myArray.display();
+				}
+				if(ch==8){
+					cout<<"Bubble Sorted Array:";
+					myArray.bubble_sort();
+					myArray.display();
+				}
+				if(ch==9){
+					cout<<"Insertion Sorted Array:";
+					myArray.insertion_sort();
+					myArray.display();
+				}
+				if(ch==10){
+					int lb=myArray.getLB();
+					int ub=myArray.getUB();
+					cout<<"Merge Sorted Array:";
+					myArray.merge_Sort(lb,ub);
+					myArray.display();
+				}
+				if(ch==11){
+					cout<<"Selection Sorted Array:";
+					myArray.selection_sort();
+					myArray.display();
+				}
+				if(ch==12){
+					cout<<"Enter the key to Binary search:";
+					float key;
+					cin>>key;
+					int ind2=myArray.binary_search(key);
+					cout<<"Index in binary search:"<<ind2<<endl;
+				}
+				if(ch==13){
+					cout<<"Enter the key to search linearly:";
+					char key;
+					cin>>key;
+					int ind1=myArray.linear_search(key);
+					cout<<"Index in linear search:"<<ind1<<endl;
+				}
+				cout<<"Do you want to continue with operations(y/n):";
+				cin>>choice;
+
+			}
+		}
+		cout<<"Do you want to continue creating array(y/n):";
+		cin>>stat;
+	}
+	
+	return 0;
+}
+
